@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="design.css">
+    </head>
+    <body>
+        <form>Customer Information
+        <h1>Enter the Customer Information</h1>
+        <label for="Name">Customer Name</label>
+        <input type="text" id="Name">
+        <br>
+        <label for="Mobile Number">Mobile No</label>
+        <input type="number" id="Number">
+        <br>
+        <label for="Membership">Membership Type</label>
+        <form>
+            <select name="membership-type">
+                <option value="type">Free Membership</option>
+                <option value="type">One-Time Membership</option>
+                <option value="type">Subscription-Based</option>
+                <option value="type">Donation-Based</option>
+                <option value="type">Event-Based</option>
+            </select>
+    </form>
+        <br>
+        <button onclick="addItem()">Add Information</button>
+        <br>
+        <button onclick="removeItem()">Remove Information</button>
+        <ul id="list"></ul>
+     </form>
+     <script>
+        function addItem(){
+            var a=document.getElementById("list");
+            var customer=document.getElementById("Name");
+            var contact=document.getElementById("Number");
+            var li=document.createElement("li");
+            li.setAttribute('id',customer.value,contact.value);
+            li.appendChild(document.createTextNode(customer.value,contact.value));
+            a.appendChild(li);
+        }
+        function removeItem(){
+            var a=document.getElementById("list");
+            var customer=document.getElementById("Name");
+            var contact=document.getElementById("Number");
+            var item=document.getElementById(customer.value,contact.value);
+            a.removeChild(item);
+        }
+     </script>
+
+    </body>
+</html>
